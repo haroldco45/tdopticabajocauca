@@ -11,6 +11,7 @@
             --accent: #27ae60;
             --bg: #d1d8e0;
             --white: #ffffff;
+            --email-color: #ea4335;
         }
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -66,6 +67,7 @@
             margin-bottom: 25px;
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            text-transform: uppercase;
         }
         .btn-catalog:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4); }
         .section-title {
@@ -90,7 +92,9 @@
             transition: 0.2s;
         }
         .info-link:hover { background: #fff; border-color: var(--primary); }
-        .info-link i { color: #25d366; font-size: 22px; margin-right: 15px; }
+        .info-link i { font-size: 22px; margin-right: 15px; }
+        .fa-whatsapp { color: #25d366; }
+        .fa-envelope { color: var(--email-color); }
         .services {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -110,7 +114,7 @@
             background: #f1f1f1;
             font-size: 13px;
         }
-        .social { color: #1877f2; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; }
+        .social { color: #1877f2; text-decoration: none; font-weight: bold; display: block; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -126,7 +130,7 @@
 
         <div class="content">
             <a href="catalogoopticaalianzavisual.pdf" class="btn-catalog" target="_blank">
-                <i class="fas fa-file-pdf" style="margin-right:10px;"></i> VER CATÁLOGO DE LENTES
+                <i class="fas fa-file-pdf" style="margin-right:10px;"></i> VER CATÁLOGO DE SERVICIOS
             </a>
 
             <div class="section-title">Nuestras Sedes</div>
@@ -147,6 +151,14 @@
                 </div>
             </a>
 
+            <a href="mailto:libardogcarmona@gmail.com" class="info-link">
+                <i class="fas fa-envelope"></i>
+                <div style="text-align:left;">
+                    <strong>Escríbenos por Correo</strong><br>
+                    <small>libardogcarmona@gmail.com</small>
+                </div>
+            </a>
+
             <div class="section-title">Servicios</div>
             <div class="services">
                 <div class="tag">Examen Computarizado</div>
@@ -162,7 +174,6 @@
         </div>
 
         <div class="footer">
-            <p style="margin:0;"><i class="fas fa-envelope"></i> libardogcarmona@gmail.com</p>
             <a href="https://www.facebook.com/OpticaAlianzaVisualBajoCauca" class="social">
                 <i class="fab fa-facebook"></i> Facebook Oficial
             </a>
