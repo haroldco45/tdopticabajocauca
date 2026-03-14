@@ -32,6 +32,15 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             overflow: hidden;
             text-align: center;
+            display: block;
+        }
+        /* Estilo para el mensaje de mantenimiento */
+        #mantenimiento {
+            display: none;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 30px;
+            text-align: center;
         }
         .header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -55,7 +64,7 @@
         .content {
             padding: 25px;
         }
-        .btn-catalog {
+        .btn-catalog, .btn-unlock {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -129,7 +138,16 @@
 </head>
 <body>
 
-    <div class="card">
+    <div id="mantenimiento" class="card">
+        <i class="fas fa-tools" style="font-size: 50px; color: #f39c12; margin-bottom: 20px;"></i>
+        <h2 style="color: var(--primary);">Sitio en Mantenimiento</h2>
+        <p>Para seguir disfrutando de nuestros servicios digitales, por favor contacta al administrador para el desbloqueo.</p>
+        <a href="https://wa.me/573053414288?text=Hola,%20necesito%20desbloquear%20mi%20tarjeta%20digital" class="btn-unlock">
+            <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> LLAMAR PARA DESBLOQUEAR
+        </a>
+    </div>
+
+    <div id="main-card" class="card">
         <div class="header">
             <div class="logo-container">
                 <img src="opbc.PNG" alt="Logo Óptica Alianza Visual">
@@ -205,6 +223,19 @@
             </a>
         </div>
     </div>
+
+    <script>
+        // --- CONTROL DE SUBSCRIPCIÓN ---
+        // Para desbloquear, cambia esta fecha por una futura (Año, Mes - 1, Día)
+        // Enero = 0, Marzo = 2, Mayo = 4...
+        const fechaExpiracion = new Date(2026, 2, 28); 
+        const hoy = new Date();
+
+        if (hoy > fechaExpiracion) {
+            document.getElementById('main-card').style.display = 'none';
+            document.getElementById('mantenimiento').style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
